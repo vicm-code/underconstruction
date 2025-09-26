@@ -70,10 +70,11 @@
         <p>Please check back soon.</p>
     </div>
     <form class="contact-form" action="https://formsubmit.co/vic.bart.mot@gmail.com" method="POST">
-        <!-- Prevent spam -->
+        <!-- FormSubmit settings -->
         <input type="hidden" name="_captcha" value="false">
-        <!-- Redirect to a thank-you page (optional, replace with your own page) -->
-        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+        <input type="hidden" name="_template" value="table"> <!-- nicer email format -->
+        <input type="hidden" name="_replyto" value=""> <!-- allows user confirmation -->
+        <input type="hidden" name="_autoresponse" value="Bedankt voor je bericht! Hier is een kopie van je inzending.">
 
         <div class="form-group">
             <label for="name">Naam:</label>
@@ -88,6 +89,11 @@
             <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         <button type="submit" class="submit-button">Verstuur</button>
+
+        <!-- Success message (hidden by default) -->
+        <p id="form-success" style="display:none; color:green; margin-top:1rem;">
+            ✅ Je bericht is verzonden! Er is ook een bevestiging naar je e-mail gestuurd.
+        </p>
     </form>
 </body>
 
