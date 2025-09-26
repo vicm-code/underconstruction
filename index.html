@@ -69,11 +69,10 @@
         <h1>🚧 Website under construction.</h1>
         <p>Please check back soon.</p>
     </div>
-    <form class="contact-form" action="https://formsubmit.co/vic.bart.mot@gmail.com" method="POST">
+    <form class="contact-form" action="https://formsubmit.co/charlotte.vandeputte@yahoo.com" method="POST">
         <!-- FormSubmit settings -->
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table"> <!-- nicer email format -->
-        <input type="hidden" name="_replyto" value=""> <!-- allows user confirmation -->
+        <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_autoresponse" value="Bedankt voor je bericht! Hier is een kopie van je inzending.">
 
         <div class="form-group">
@@ -82,7 +81,8 @@
         </div>
         <div class="form-group">
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <!-- IMPORTANT: use _replyto so FormSubmit knows where to send confirmation -->
+            <input type="email" id="email" name="_replyto" required>
         </div>
         <div class="form-group">
             <label for="message">Bericht:</label>
@@ -90,11 +90,12 @@
         </div>
         <button type="submit" class="submit-button">Verstuur</button>
 
-        <!-- Success message (hidden by default) -->
+        <!-- Success message -->
         <p id="form-success" style="display:none; color:green; margin-top:1rem;">
             ✅ Je bericht is verzonden! Er is ook een bevestiging naar je e-mail gestuurd.
         </p>
     </form>
+
 </body>
 
 </html>
