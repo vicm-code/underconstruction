@@ -74,9 +74,9 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <!-- Autoresponse (sent back to the sender) -->
+        <!-- Custom confirmation email -->
         <input type="hidden" name="_autoresponse"
-            value="Bedankt voor je bericht! Hier is een kopie van wat je hebt verstuurd.">
+            value="Bedankt voor je bericht! Hieronder vind je een kopie van wat je hebt verstuurd:&#10;&#10;Naam: {name}&#10;E-mail: {_replyto}&#10;Bericht: {message}&#10;&#10;Ik neem zo snel mogelijk contact met je op.">
 
         <div class="form-group">
             <label for="name">Naam:</label>
@@ -84,7 +84,6 @@
         </div>
         <div class="form-group">
             <label for="email">E-mail:</label>
-            <!-- IMPORTANT: this must be _replyto -->
             <input type="email" id="email" name="_replyto" required>
         </div>
         <div class="form-group">
@@ -98,6 +97,7 @@
             ✅ Je bericht is verzonden! Er is ook een bevestiging naar je e-mail gestuurd.
         </p>
     </form>
+
 
 
 </body>
