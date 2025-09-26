@@ -70,13 +70,16 @@
         <p>Please check back soon.</p>
     </div>
     <form class="contact-form" action="https://formsubmit.co/vic.bart.mot@gmail.com" method="POST">
-        <!-- FormSubmit settings -->
+        <!-- Required FormSubmit settings -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
-        <!-- Custom confirmation email -->
+        <!-- Custom subject for the confirmation mail -->
+        <input type="hidden" name="_subject" value="Bevestiging: je bericht is ontvangen">
+
+        <!-- Custom confirmation text -->
         <input type="hidden" name="_autoresponse"
-            value="Bedankt voor je bericht! Hieronder vind je een kopie van wat je hebt verstuurd:&#10;&#10;Naam: {name}&#10;E-mail: {_replyto}&#10;Bericht: {message}&#10;&#10;Ik neem zo snel mogelijk contact met je op.">
+            value="Bedankt voor je bericht! We hebben je bericht ontvangen en dit is een kopie voor jou.">
 
         <div class="form-group">
             <label for="name">Naam:</label>
@@ -84,6 +87,7 @@
         </div>
         <div class="form-group">
             <label for="email">E-mail:</label>
+            <!-- IMPORTANT: must be named _replyto -->
             <input type="email" id="email" name="_replyto" required>
         </div>
         <div class="form-group">
@@ -92,11 +96,11 @@
         </div>
         <button type="submit" class="submit-button">Verstuur</button>
 
-        <!-- Success message -->
         <p id="form-success" style="display:none; color:green; margin-top:1rem;">
             ✅ Je bericht is verzonden! Er is ook een bevestiging naar je e-mail gestuurd.
         </p>
     </form>
+
 
 
 
